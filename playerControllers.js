@@ -1,13 +1,13 @@
-function PlayerController(){
+function PlayersControllers() {
 
-//Private
-var playerService = new PlayersService(drawPlaTeam);
+    //Private
+    var playerService = new PlayersService(drawPlayTeam);
 
-function drawPlayTeam(players){
-    var template = '<h1>Your NFL Team</h1>';
-    for (let i = 0; i < players.length; i++) {
-        const player = players[i];
-        template += `
+    function drawPlayTeam(players) {
+        var template = '<h1>Your NFL Team</h1>';
+        for (let i = 0; i < players.length; i++) {
+            const player = players[i];
+            template += `
         <div class="row">
         <div class="col">
             <div class="card" style="width: 18rem;">
@@ -22,15 +22,15 @@ function drawPlayTeam(players){
         </div>
     </div>
         `
+        }
+        document.getElementById('player').innerHTML = template
     }
-    document.getElementById('player').innerHTML = template
-}
 
-function drawPlayerList(players){
-    var template = '<h1>List of Players</h1>';
-    for (let i = 0; i < players.length; i++) {
-        const player = players[i];
-        template += `
+    function drawPlayerList(players) {
+        var template = '<h1>List of Players</h1>';
+        for (let i = 0; i < players.length; i++) {
+            const player = players[i];
+            template += `
         <div class="card">
         <div class="card-header">
           Team:
@@ -43,15 +43,15 @@ function drawPlayerList(players){
       </div>
 
         `
+        }
+        document.getElementById('playList').innerHTML= template
     }
-    document.getElementById('playList').innerHTML = template
-}
 
 
 
 
 
-//Public
+    //Public
 
 
 

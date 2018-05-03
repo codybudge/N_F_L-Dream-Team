@@ -9,6 +9,11 @@
     <title>Fanitsy NFL</title>
 </head>
 <body>
+        <form class="form-inline d-flex justify-content-center" onsubmit="app.controllers.playerControllers.getMusic(event)">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
+                    <button type="submit" class="btn btn-primary" id="get-music-button">Serch Music</button>
+                </div>
     <div class="container-fluid playerCards" id="players">
         <!-- <div class="row">
             <div class="col">
@@ -47,13 +52,13 @@
 
 
 
-    //Out side scripts
+    <!--EXTERNAL CONTENT-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    //playerService
-<script src="app/playerService.js"></script>
-    //playerController
-<script src="app/playerController.js"></script>
-    //App
-<script src="app/app.js"></script>
+   <!--sERVICES-->
+<script src="playerService.js"></script>
+   <!--CONTROLLERS-->
+<script src="playerController.js"></script>
+    <!--APP-->
+<script src="app.js"></script>
 </body>
 </html>
