@@ -3,6 +3,13 @@ function PlayersControllers() {
     //Private
     var playerService = new PlayersService(drawPlayTeam);
 
+    this.getPlayers = function getPlayers(e){
+        e.preventDefault();
+        var playersData = e.target.playersData.value;
+        playerService.getPlayersData(players).then(drawPlayTeam);
+      }
+    
+
     function drawPlayTeam(players) {
         var template = '<h1>Your NFL Team</h1>';
         for (let i = 0; i < players.length; i++) {
@@ -11,7 +18,7 @@ function PlayersControllers() {
         <div class="row">
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="Card image cap">
+                <img class="card-img-top" src="//placehold.it/200x200" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Name:</h5>
                   <p class="card-text">Position:</p>
@@ -23,7 +30,7 @@ function PlayersControllers() {
     </div>
         `
         }
-        document.getElementById('player').innerHTML = template
+        document.getElementById('players').innerHTML = template
     }
 
     function drawPlayerList(players) {

@@ -6,16 +6,20 @@ function PlayersService(callback) {
 
   //Public
   this.getPlayerName = function(playerName){
-
-  }
+    return playerName
+ }
 
   this.getPlayersByTeam = function (teamName) {
-    
+    return teamName
   }
 
   this.getPlayersByPosition = function (position) {
-  
+  return position
   }
+  this.getPlayersData = function(playersData){
+  }
+  console.log(playersData)
+  return playersData
 
   function loadPlayersData() {
     //check if the player already has a copy of the NFL playersData
