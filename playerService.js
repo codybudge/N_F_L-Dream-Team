@@ -1,25 +1,36 @@
-function PlayersService(callback) {
+function PlayerService(callback) {
   //Private
   var playersData = []
 
 
 
   //Public
-  this.getPlayerName = function(playerName){
-    return playerName
- }
-
-  this.getPlayersByTeam = function (teamName) {
-    return teamName
+  this.getPlayerName = function (fullname) {
+    return playersData.filter(function (player) {
+      if (player.name == fullname) {
+        return true;
+      }
+    })
   }
 
+  this.getPlayersByTeam = function (pro_team) {
+    return playersData.filter(function (player) {
+      if (player.team == pro_team) {
+        return true;
+      }
+    })
+  }
   this.getPlayersByPosition = function (position) {
-  return position
+    return playersData.filter(function (player) {
+      if (player.position == position) {
+        return true;
+      }
+    })
   }
-  this.getPlayersData = function(playersData){
+  this.getPlayersData = function (playersData) {
+    console.log(playersData)
+    return playersData
   }
-  console.log(playersData)
-  return playersData
 
   function loadPlayersData() {
     //check if the player already has a copy of the NFL playersData
