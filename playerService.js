@@ -1,35 +1,47 @@
 function PlayerService(callback) {
   //Private
-  var playersData = []
-
+  var playersData = [];
+var myTeam = [];
 
 
   //Public
-  this.getPlayerName = function (fullname) {
+  this.getPlayerName = function getPlayerName(name) {
     return playersData.filter(function (player) {
-      if (player.name == fullname) {
+      if (player.fullname.toLowerCase().includes(name.toLowerCase())) {
         return true;
-      }
-    })
-  }
+     
+    }
+  })
+}
 
-  this.getPlayersByTeam = function (pro_team) {
+  this.getPlayersByTeam = function getPlayersByTeam(pro_team) {
     return playersData.filter(function (player) {
-      if (player.team == pro_team) {
+      if (player.pro_team.toLowerCase().includes(pro_team.toLowerCase())) {
         return true;
       }
     })
   }
-  this.getPlayersByPosition = function (position) {
+  this.getPlayersByPosition = function getPlayersByPosition(position){
     return playersData.filter(function (player) {
-      if (player.position == position) {
+      if (player.position.toLowerCase().includes(position.toLowerCase())) { 
         return true;
       }
     })
   }
-  this.getPlayersData = function (playersData) {
+  this.getPlayersData = function getPlayersData(playersData) {
     console.log(playersData)
     return playersData
+  }
+  this.addPlayer = function addPlayer(playerId){
+    var sameposition = false
+    //check position
+    for (var i = 0; i < playersData.length; i++) {
+     if ( playerId == playersData[i].id);
+      myTeam.push(playersData[i])
+    }
+ 
+  }
+  return myTeam
   }
 
   function loadPlayersData() {
