@@ -32,17 +32,40 @@ var myTeam = [];
     console.log(playersData)
     return playersData
   }
-  this.addPlayer = function addPlayer(playerId){
+  this.addPlayer = function addPlayer(playerId,cb){
     var sameposition = false
-    //check position
     for (var i = 0; i < playersData.length; i++) {
-     if ( playerId == playersData[i].id);
-      myTeam.push(playersData[i])
+      
+      if ( playerId == playersData[i].id){
+        var newPlayer = playersData[i]
+        for (let x = 0; x < myTeam.length; x++) {
+          var myTeamPlayer = myTeam[x];
+          if(newPlayer.position == myTeamPlayer.position){
+            sameposition = true
+          }
+        } 
+        debugger
+        if (!sameposition) {
+        myTeam.push(playersData[i])
+        
+        
+      }
+      
+  }
     }
- 
-  }
-  return myTeam
-  }
+    cb(myTeam)
+}
+
+this.removeFromTeam = function removeFromTeam(removeId, cb) {
+  var removeMember = myTeam.find(function(player){
+    return player.id == removeId
+  })
+  var index = myTeam.indexOf(removeMember)
+  myTeam.splice(index,1)
+
+  cb(myTeam)
+
+};
 
   function loadPlayersData() {
     //check if the player already has a copy of the NFL playersData
@@ -69,4 +92,4 @@ var myTeam = [];
     });
   }
   loadPlayersData(); //call the function above every time we create a new service
-} 
+}

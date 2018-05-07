@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="row" id='search-form'>
+    <div class="container" id='search-form'>
         <img class="laodingGif" src="loading.gif" alt="">
     </div>
     <!-- <form class="form-inline d-flex justify-content-center" onsubmit="app.controllers.playersControllers.getplayersData(event)">
@@ -21,23 +21,25 @@
             <button type="submit" class="btn btn-primary" id="get-player-button">Serch Players</button>
         </div>
     </form> -->
-    <div class="container-fluid playerCards" id="players">
+    <div class="container-fluid playerCards">
+            <div class="row" id="players">
         <!-- <div class="row"> 
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="//placehold.it/200x200/" alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">Name:</h5>
-                      <p class="card-text">Position:</p>
-                      <p class="card-text">Team:</p>
-                      <a href="#" class="btn btn-primary">Remove</a>
+                        <h5 class="card-title">Name:</h5>
+                        <p class="card-text">Position:</p>
+                        <p class="card-text">Team:</p>
+                        <a href="#" class="btn btn-primary">Remove</a>
                     </div>
-                  </div>
+                </div>
             </div> -->
+        </div>
+    </div>
 
-
-
-        <div class="col-3" id="playList">
+        <div class="container-fluid" >
+            <div class="row" id="playList">
             <!-- <div class="card">
                         <div class="card-header">
                           Team:
@@ -51,8 +53,7 @@
 
         </div>
     </div>
-    </div>
-
+</div>
 
 
 
