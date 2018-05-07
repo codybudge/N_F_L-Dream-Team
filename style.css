@@ -12,3 +12,9 @@
     width: 18rem;
     height: 30rem;
 }
+.container-fluid{
+    margin-left: 4rem
+}
+.col-12{
+    margin-top: 2rem
+}

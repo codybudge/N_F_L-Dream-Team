@@ -44,7 +44,6 @@ var myTeam = [];
             sameposition = true
           }
         } 
-        debugger
         if (!sameposition) {
         myTeam.push(playersData[i])
         
