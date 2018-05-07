@@ -1,0 +1,14 @@
+.bgColor{
+    background: #00204A;
+    font-family: 'Bungee Inline', cursive;
+    color: #D9FAFF
+}
+.btnColor{
+    color: #00204A;
+    background: #00BBF0
+}
+.cardBg{
+    background: #005792;
+    width: 18rem;
+    height: 30rem;
+}
