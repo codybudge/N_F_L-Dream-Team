@@ -11,19 +11,19 @@ function PlayersControllers() {
         <form class="form-inline col-4"onsubmit="app.controllers.playersControllers.getPlayersName(event)">
         <div class="form-group">
         <input type="text" class="form-control" name="playersData" placeholder="Player Name" />
-        <button type="submit" class="btnColor" id="get-player-button">Serch Name</button>
+        <button type="submit" class="btnColor" id="get-player-button">Search Name</button>
         </div>
         </form>
         <form class="form-inline col-4" onsubmit="app.controllers.playersControllers.getPlayersTeam(event)">
          <div class="form-group">
          <input type="text" class="form-control" name="playersData" placeholder="Player Team" />
-         <button type="submit" class="btnColor" id="get-player-button">Serch Team</button>
+         <button type="submit" class="btnColor" id="get-player-button">Search Team</button>
          </div>
          </form>
          <form class="form-inline col-4" onsubmit="app.controllers.playersControllers.getPlayersPosition(event)">
          <div class="form-group">
          <input type="text" class="form-control" name="playersData" placeholder="Player Position" />
-         <button type="submit" class="btnColor" id="get-player-button">Serch Position</button>
+         <button type="submit" class="btnColor" id="get-player-button">Search Position</button>
          </div>
          </div>
          </form>
