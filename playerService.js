@@ -1,7 +1,7 @@
 function PlayerService(callback) {
   //Private
   var playersData = [];
-var myTeam = [];
+  var myTeam = [];
 
 
   //Public
@@ -9,10 +9,10 @@ var myTeam = [];
     return playersData.filter(function (player) {
       if (player.fullname.toLowerCase().includes(name.toLowerCase())) {
         return true;
-     
-    }
-  })
-}
+
+      }
+    })
+  }
 
   this.getPlayersByTeam = function getPlayersByTeam(pro_team) {
     return playersData.filter(function (player) {
@@ -21,9 +21,9 @@ var myTeam = [];
       }
     })
   }
-  this.getPlayersByPosition = function getPlayersByPosition(position){
+  this.getPlayersByPosition = function getPlayersByPosition(position) {
     return playersData.filter(function (player) {
-      if (player.position.toLowerCase().includes(position.toLowerCase())) { 
+      if (player.position.toLowerCase().includes(position.toLowerCase())) {
         return true;
       }
     })
@@ -32,39 +32,39 @@ var myTeam = [];
     console.log(playersData)
     return playersData
   }
-  this.addPlayer = function addPlayer(playerId,cb){
+  this.addPlayer = function addPlayer(playerId, cb) {
     var sameposition = false
     for (var i = 0; i < playersData.length; i++) {
-      
-      if ( playerId == playersData[i].id){
+
+      if (playerId == playersData[i].id) {
         var newPlayer = playersData[i]
         for (let x = 0; x < myTeam.length; x++) {
           var myTeamPlayer = myTeam[x];
-          if(newPlayer.position == myTeamPlayer.position){
+          if (newPlayer.position == myTeamPlayer.position) {
             sameposition = true
           }
-        } 
+        }
         if (!sameposition) {
-        myTeam.push(playersData[i])
-        
-        
+          myTeam.push(playersData[i])
+
+
+        }
+
       }
-      
-  }
     }
     cb(myTeam)
-}
+  }
 
-this.removeFromTeam = function removeFromTeam(removeId, cb) {
-  var removeMember = myTeam.find(function(player){
-    return player.id == removeId
-  })
-  var index = myTeam.indexOf(removeMember)
-  myTeam.splice(index,1)
+  this.removeFromTeam = function removeFromTeam(removeId, cb) {
+    var removeMember = myTeam.find(function (player) {
+      return player.id == removeId
+    })
+    var index = myTeam.indexOf(removeMember)
+    myTeam.splice(index, 1)
 
-  cb(myTeam)
+    cb(myTeam)
 
-};
+  };
 
   function loadPlayersData() {
     //check if the player already has a copy of the NFL playersData
