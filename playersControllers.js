@@ -8,19 +8,19 @@ function PlayersControllers() {
         console.log(data)
         document.getElementById('search-form').innerHTML = `
         <div class="row">
-        <form class="form-inline col-4"onsubmit="app.controllers.playersControllers.getPlayersName(event)">
+        <form class="form-inline col"onsubmit="app.controllers.playersControllers.getPlayersName(event)">
         <div class="form-group">
         <input type="text" class="form-control" name="playersData" placeholder="Player Name" />
         <button type="submit" class="btnColor" id="get-player-button">Search Name</button>
         </div>
         </form>
-        <form class="form-inline col-4" onsubmit="app.controllers.playersControllers.getPlayersTeam(event)">
+        <form class="form-inline col" onsubmit="app.controllers.playersControllers.getPlayersTeam(event)">
          <div class="form-group">
          <input type="text" class="form-control" name="playersData" placeholder="Player Team" />
          <button type="submit" class="btnColor" id="get-player-button">Search Team</button>
          </div>
          </form>
-         <form class="form-inline col-4" onsubmit="app.controllers.playersControllers.getPlayersPosition(event)">
+         <form class="form-inline col" onsubmit="app.controllers.playersControllers.getPlayersPosition(event)">
          <div class="form-group">
          <input type="text" class="form-control" name="playersData" placeholder="Player Position" />
          <button type="submit" class="btnColor" id="get-player-button">Search Position</button>
@@ -37,7 +37,7 @@ function PlayersControllers() {
         for (let i = 0; i < players.length; i++) {
             const player = players[i];
             template += `
-            <div class="col-3">
+            <div class="col">
             <div class="cardBg">
             <img class="card-img-top" src="${player.photo}" alt="Card image cap">
             <div class="card-body">
@@ -58,7 +58,7 @@ function PlayersControllers() {
         for (let i = 0; i < players.length; i++) {
             const player = players[i];
             template += `
-            <div class="col-3">
+            <div class="col">
             <div class="cardBg">
             <img class="card-img-top" src="${player.photo}" alt="Card image cap">
             <div class="card-header">
@@ -113,5 +113,5 @@ function PlayersControllers() {
 
     this.removeFromTeam = function removeFromTeam(playerId) {
         playerService.removeFromTeam(playerId, drawPlayTeam)
-      };
+    };
 }
